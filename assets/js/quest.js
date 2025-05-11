@@ -81,8 +81,6 @@
     function handleChoice(choiceIndex) {
         if (questCompleted) return;
 
-        // Логіка вибору можна доповнити; зараз просто рухаємося далі.
-        // Для фінальної сцени можна показати підсумок.
         if (currentSceneIndex < questScenes.length - 1) {
             currentSceneIndex++;
             renderScene(currentSceneIndex);

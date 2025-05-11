@@ -471,7 +471,7 @@
             <a data-i18n="orcs" href="orcs.html">Orcs</a>
             <a data-i18n="dragons" href="dragons.html">Dragons</a>
             <a data-i18n="tic-tac-toe" href="tic-tac-toe.html" aria-current="page">Tic Tac Toe</a>
-            <a href="quest.html">Quest Adventure</a>
+            <a data-i18n="quest" href="quest.html">Quest Adventure</a>
         </nav>
         <div class="header-btn">
             <button id="languageToggle" class="theme-toggle-btn">UA</button>
@@ -493,7 +493,6 @@
                 height: 100%;
                 object-fit: cover;
                 z-index: -1;
-                /* Задній план */
             }
         </style>
         <div style="background-color: #1a1a2e; padding: 36px 24px; border-radius: 12px;">
@@ -525,7 +524,6 @@
 
         <div id="gameContainer" style="position: relative;">
             <div id="gameBoard" role="grid" aria-label="Tic Tac Toe game board" tabindex="0">
-                <!-- Джава код тут -->
             </div>
             <svg id="strikeCanvas" aria-hidden="true" width="100%" height="100%"
                 style="position:absolute; top:0; left:0; z-index:10; pointer-events:none;">
@@ -540,7 +538,6 @@
             <div data-i18n="ticTacToeplayDragonsScore" id="score-dragons">Dragons: 0</div>
             <div data-i18n="ticTacToeplayDwarvesScore" id="score-dwarves">Dwarves: 0</div>
         </div>
-        <!-- Add this at the bottom of your main content, before the scoreboard -->
         <div id="gameModal" class="modal" aria-hidden="true" style="display: none;">
             <div class="modal-content">
                 <div id="resultMessage" aria-live="polite"></div>

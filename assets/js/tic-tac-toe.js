@@ -39,7 +39,6 @@
         document.removeEventListener('click', startMusic); // більше не слухаємо
     });
 
-    // Close modal when clicking outside content
     gameModal.addEventListener('click', (e) => {
         if (e.target === gameModal) {
             gameModal.style.display = 'none';
@@ -190,7 +189,6 @@
             resultMessage.textContent = "It's a draw!";
         }
 
-        // Show modal instead of just showing the restart button
         gameModal.style.display = 'flex';
         setTimeout(() => {
             gameModal.classList.add('show');

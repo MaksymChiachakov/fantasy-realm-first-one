@@ -26,7 +26,6 @@ document.addEventListener('click', function startMusic() {
         }
     }
 
-    // Initialize theme based on preference or default
     let currentTheme = localStorage.getItem('theme') || 'light';
     setTheme(currentTheme);
 
@@ -36,7 +35,6 @@ document.addEventListener('click', function startMusic() {
         localStorage.setItem('theme', currentTheme);
     });
 
-    // Scroll to top button visibility
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
             scrollTopBtn.style.display = 'block';
