@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fantasy Realm - Quest Adventure</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/img/logoo.png" type="image/x-icon">
+    <style>
+        :root {
+            --purple: #6a0dad;
+            --purple-dark: #4b007d;
+            --bg-light: #f8f4f8;
+            --bg-dark: #1a1a2e;
+            --text-light: #222222;
+            --text-dark: #e0dcdc;
+            --header-bg-light: #bb86fc;
+            --header-bg-dark: #3a235e;
+            --nav-link-light: #53007a;
+            --nav-link-dark: #a78bff;
+            --scroll-btn-bg: #6a0dad;
+            --scroll-btn-arrow: #000000;
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --text-color: var(--text-dark);
+            --header-bg: var(--header-bg-dark);
+            --nav-link-color: var(--nav-link-dark);
+        }
+
+        [data-theme="light"] {
+            --bg: var(--bg-light);
+            --text-color: var(--text-light);
+            --header-bg: var(--header-bg-light);
+            --nav-link-color: var(--nav-link-light);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        body {
+            font-family: 'Cinzel', serif;
+            background-color: var(--bg);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        a {
+            color: var(--nav-link-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        a:hover,
+        a:focus {
+            color: var(--purple-dark);
+            outline: none;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: var(--header-bg);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .logo {
+            font-family: 'Uncial Antiqua', cursive;
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        nav {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 1rem;
+        }
+
+        nav a[aria-current="page"] {
+            font-weight: 700;
+        }
+
+        .theme-toggle-btn {
+            background-color: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-left: 16px;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .theme-toggle-btn:hover,
+        .theme-toggle-btn:focus {
+            background-color: #fff;
+            color: var(--purple);
+            outline: none;
+        }
+
+        main {
+            flex-grow: 1;
+            max-width: 600px;
+            margin: 2rem auto 4rem auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        h1 {
+            font-family: 'Uncial Antiqua', cursive;
+            color: var(--purple);
+            text-shadow: 1px 1px 3px rgba(106, 13, 173, 0.7);
+            text-align: center;
+            font-size: 2.8rem;
+        }
+
+        .quest-container {
+            background-color: var(--bg);
+            border: 3px solid var(--purple);
+            border-radius: 20px;
+            padding: 1.5rem 2rem;
+            box-shadow: 0 0 20px var(--purple);
+            user-select: text;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .quest-text {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Cinzel', serif;
+            line-height: 1.5;
+        }
+
+        .quest-choices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        button.choice-button {
+            background-color: var(--purple);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 0.6rem 1.2rem;
+            font-family: 'Cinzel', serif;
+            font-size: 1rem;
+            cursor: pointer;
+            box-shadow: 0 0 15px var(--purple);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            min-width: 150px;
+            user-select: none;
+        }
+
+        button.choice-button:hover,
+        button.choice-button:focus {
+            background-color: var(--purple-dark);
+            transform: scale(1.05);
+            outline: none;
+        }
+
+        #questResult {
+            margin-top: 2rem;
+            font-size: 1.4rem;
+            font-family: 'Uncial Antiqua', cursive;
+            color: var(--purple);
+            text-align: center;
+            min-height: 3em;
+            user-select: text;
+        }
+
+        button#restartQuestBtn {
+            display: none;
+            margin: 1rem auto 0 auto;
+            padding: 0.6rem 2rem;
+            font-family: 'Cinzel', serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            background-color: var(--purple);
+            color: white;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 20px var(--purple);
+            transition: background-color 0.3s ease;
+        }
+
+        button#restartQuestBtn:hover,
+        button#restartQuestBtn:focus {
+            background-color: var(--purple-dark);
+            outline: none;
+        }
+
+        @media (max-width: 600px) {
+            .quest-choices {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            button.choice-button {
+                min-width: 100%;
+            }
+        }
+
+        footer {
+            background-color: var(--header-bg);
+            color: #fff;
+            text-align: center;
+            padding: 0.8rem;
+            font-size: 0.9rem;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        #scrollTopBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--scroll-btn-bg);
+            border: none;
+            padding: 16px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: none;
+            z-index: 10000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #scrollTopBtn:hover,
+        #scrollTopBtn:focus {
+            background-color: #4b007d;
+            outline: none;
+        }
+
+        #scrollTopBtn::before {
+            content: "";
+            display: inline-block;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 14px solid var(--scroll-btn-arrow);
+            margin-left: 0px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo" tabindex="0">Fantasy Realm</div>
+        <nav>
+            <a data-i18n="home" href="index.html">Home</a>
+            <a data-i18n="elves" href="elves.html">Elves</a>
+            <a data-i18n="dwarves" href="dwarves.html">Dwarves</a>
+            <a data-i18n="orcs" href="orcs.html">Orcs</a>
+            <a data-i18n="dragons" href="dragons.html">Dragons</a>
+            <a data-i18n="tic-tac-toe" href="tic-tac-toe.html" aria-current="page">Tic Tac Toe</a>
+            <a data-i18n="quest" href="quest.html">Quest Adventure</a>
+        </nav>
+        <div class="header-btn">
+            <button id="languageToggle" class="theme-toggle-btn">UA</button>
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">Dark Mode</button>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- <img id="backgroundphoto" src="./assets/img/background 1.webp"> -->
+        <img id="backgroundphoto" src="./assets/img/home 6.jpeg">
+        <style>
+            #backgroundphoto {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                z-index: -1;
+                /* Задній план */
+            }
+        </style>
+        <h1>Quest Adventure</h1>
+        <div class="quest-container" role="region" aria-live="polite" aria-atomic="true">
+            <div id="questText" class="quest-text"></div>
+            <div id="questChoices" class="quest-choices"></div>
+            <div id="questResult"></div>
+            <button id="restartQuestBtn">Restart Quest</button>
+        </div>
+    </main>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top"
+        style="display:none; position: fixed; bottom: 20px; right: 20px; background-color: var(--scroll-btn-bg); border:none; padding: 12px 16px; border-radius: 8px; cursor:pointer; z-index: 10000;">
+        ▲
+    </button>
+
+    <footer>
+        &copy; 2025 Fantasy Realm. All rights reserved by Maksym Chiachakov :)
+    </footer>
+
+    <script src="./assets/js/quest.js"></script>
+    <script src="./assets/js/lang.js"></script>
+</body>
+
+</html>
+</content>
+</create_file>

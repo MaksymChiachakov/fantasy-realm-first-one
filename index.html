@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fantasy Realm - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Uncial+Antiqua&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/scss/style.css" />
+    <link rel="icon" href="assets/img/logoo.png" type="image/x-icon">
+    <!-- тест -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <header>
+        <div class="logo" tabindex="0">Fantasy Realm</div>
+        <nav style="align-items: center;">
+            <a data-i18n="home" href="index.html" aria-current="page">Home</a>
+            <a data-i18n="elves" href="elves.html">Elves</a>
+            <a data-i18n="dwarves" href="dwarves.html">Dwarves</a>
+            <a data-i18n="orcs" href="orcs.html">Orcs</a>
+            <a data-i18n="dragons" href="dragons.html">Dragons</a>
+            <a data-i18n="tic-tac-toe" href="tic-tac-toe.html">Tic Tac Toe</a>
+            <a href="quest.html">Quest Adventure</a>
+        </nav>
+        <div class="header-btn">
+            <button id="languageToggle" class="theme-toggle-btn">UA</button>
+            <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle light/dark theme">Dark Mode</button>
+        </div>
+
+
+    </header>
+
+    <main>
+
+        <h1 data-i18n="home.main.h1" class="text">Welcome to the Fantasy Realm</h1>
+        <img src="/assets/img/home 3.png" alt="Fantasy Landscape" class="fantasy-img" loading="lazy" />
+        <p data-i18n="home.main.text1" class="text">Enter a mystical world where elves roam ancient forests, dwarves
+            craft intricate treasures
+            beneath mountains,
+            orcs roam wild in savage lands, and mighty dragons soar across the skies. Our Fantasy Realm website delves
+            into the rich lore and culture of these legendary creatures and peoples, bringing together stories, history,
+            and art inspired by the fantasy genre.</p>
+        <p data-i18n="home.main.text2">With a dedicated page to each of the iconic fantasy races and creatures, you can
+            explore detailed histories,
+            customs, and characteristics that make the fantasy realm so enchanting. Each page is filled with vibrant
+            images, rich lore, and immersive storytelling designed to captivate and inspire your imagination.</p>
+        <p data-i18n="home.main.text3">Use the navigation above to explore the various realms and discover the magic
+            that lies within. Whether you
+            are a fan of elves’ grace, dwarves’ steadfastness, or dragons’ fiery power, Fantasy Realm offers a
+            comprehensive dive into the fantastic worlds we all cherish.</p>
+        <p data-i18n="home.main.text4">Additionally, you can switch between light and dark mode themes to suit your mood
+            or environment using the
+            button in the header. Scroll down through our rich content and make sure to use the floating purple
+            scroll-to-top button that appears once you start scrolling to quickly get back to the beginning.</p>
+
+        <section class="characters-slider">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 30px; font-family: 'Uncial Antiqua', cursive;">Наші
+                    персонажі</h2>
+
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <div class="character-card">
+                                <img src="assets/img/elve 2.jpg" class="character-image" alt="Ельф Лісник">
+                                <div class="character-info">
+                                    <h3>Ельф Лісник</h3>
+                                    <p><strong>Раса:</strong> Ельфи</p>
+                                    <p><strong>Зброя:</strong> Лук</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="character-card">
+                                <img src="assets/img/dragon.avif" class="character-image" alt="Дворф Кузнець">
+                                <div class="character-info">
+                                    <h3>Дворф Кузнець</h3>
+                                    <p><strong>Раса:</strong> Дворфи</p>
+                                    <p><strong>Зброя:</strong> Сокира</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination"></div>
+
+                    <!-- Navigation buttons -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <h2 data-i18n="timeline_title">Fantasy Realm History</h2>
+            <ul class="timeline">
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🐣</span>
+                        <div class="content" data-i18n="timeline_3000">Birth of Ignavorax, the First Dragon — fire
+                            awakens in
+                            the skies.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🌲</span>
+                        <div class="content" data-i18n="timeline_2500">Awakening of the Elves in the Moonlit Forest,
+                            guided by
+                            stars and songs.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">⛏️</span>
+                        <div class="content" data-i18n="timeline_2000">Founding of the First Dwarven Hall — beneath the
+                            granite
+                            roots of Mount Durm.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🪓</span>
+                        <div class="content" data-i18n="timeline_1500">The First Horde marches across the Northern
+                            Wastes,
+                            forging a brutal legacy.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🏰</span>
+                        <div class="content" data-i18n="timeline_1200">Rise of the first human kingdom of Kaelmar — dawn
+                            of the
+                            Age of Kings.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🌿</span>
+                        <div class="content" data-i18n="timeline_900">Establishment of the High Elven Council to guard
+                            the
+                            Sacred Groves.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">💎</span>
+                        <div class="content" data-i18n="timeline_760">Discovery of the Rune Mines — dwarves unlock
+                            ancient
+                            underground magic.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">⚖️</span>
+                        <div class="content" data-i18n="timeline_600">The Balance War — dragons, elves, and humans clash
+                            over
+                            control of magic.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🔥</span>
+                        <div class="content" data-i18n="timeline_400">Burning of Valdaar — orcs destroy a great elven
+                            city in a
+                            night of fire and fury.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🤝</span>
+                        <div class="content" data-i18n="timeline_0">Formation of the Alliance of the Five Races to face
+                            the
+                            return of the Dark Titan.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">👑</span>
+                        <div class="content" data-i18n="timeline_430">Coronation of King Bardrim — uniting all dwarven
+                            clans
+                            under the Mithril Crown.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🌌</span>
+                        <div class="content" data-i18n="timeline_800">The Celestial Slumber — ancient dragons vanish
+                            beyond the
+                            stars.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🌙</span>
+                        <div class="content" data-i18n="timeline_1100">Festival of the Fallen Moon marks the elven
+                            cultural
+                            rebirth after centuries of war.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🩸</span>
+                        <div class="content" data-i18n="timeline_1200_2">The Blood Pact — orcish warlords unite under a
+                            single
+                            banner.</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="timeline-item">
+                        <span class="icon">🐉</span>
+                        <div class="content" data-i18n="timeline_1300">Whispers rise — the world trembles as dragons
+                            begin to
+                            awaken and old powers return...</div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+
+
+
+
+
+    </main>
+
+    <button id="scrollTopBtn" aria-label="Scroll to top"></button>
+
+    <footer>
+        &copy; 2025 Fantasy Realm. All rights reserved by Maksym Chiachakov :)
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/lang.js"></script>
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            new Swiper('.swiper', {
+                slidesPerView: 1,
+                spaceBetween: 20,
+                loop: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 1,
+                    },
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
